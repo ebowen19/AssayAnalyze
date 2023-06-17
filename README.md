@@ -6,6 +6,6 @@ A Matlab tool for computationally analyzing scratch and transwell assays
   - **cellCounter.m** can be viewed in github. The ... fields must be filled in by the user.
     - *analysisPackageDirectory* should specify the folder/directory where you downloaded the AssayAnalyze Package
     - *filePath1* should specify the folder with the images that you want to analyze
-    - within the *fileList* variable, you can modify the extension to pecify the type of file (photo--tif,jpg,etc) that you want the program to identify & analyze within the *filePath1* folder
+    - within the *fileList* variable, you can modify the extension to specify the type of file (photo--tif,jpg,etc) that you want the program to identify & analyze within the *filePath1* folder
     - *filePath2* should specify the directory in which to create/look for the excel table that will be created by the program & store the image montages created.
     - *tableName* should specify the excel file where you want to store the analysis stats. If such a file does not exist withinthe *filePath2* folder, it will be created by the program
