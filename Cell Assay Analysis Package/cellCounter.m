@@ -1,10 +1,10 @@
 
-analysisPackageDirectory = "..."; 
+analysisPackageDirectory = "..."; %directory in which you downloaded the Cell Assay Analysis Package from Github
 addpath(analysisPackageDirectory); 
-filePath1 = "..."; 
-fileList = dir(fullfile(filePath1, '*.tif'));  
-filePath2 = "...";
-tableName = "..."+'.xls'; 
+filePath1 = "..."; %folder with the photos you want to analyze
+fileList = dir(fullfile(filePath1, '*.tif')); %can modify type of photo (file extension) for the program to search for / analyze within filePath1
+filePath2 = "..."; %folder where you want to store excel file output table
+tableName = "..."+'.xls'; %name you want for output table 
 
 % Extract the filenames from the structure
 filenames = {fileList.name}'
