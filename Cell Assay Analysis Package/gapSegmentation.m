@@ -39,11 +39,6 @@ function [complement, final_strel] = gapSegmentation(gap_cleared2, strel_range)
 
             % Get object properties of our foreground image
             stats = regionprops(cc,'Area','BoundingBox');
-
-            % Check if the foreground object touches the top or bottom of the image
-%             if (stats.BoundingBox(2) > 1) && ...%y-coordinate @ top left corner not touching edge
-%             (stats.BoundingBox(2)+stats.BoundingBox(4) < size(bw_final,1))
-            % The foreground object doesn't touch the top or bottom of the image
              
         bool = (stats.BoundingBox(2) + stats.BoundingBox(4) > 1 && stats.BoundingBox(2) < size(bw_final, 1) && ...
         stats.BoundingBox(1) > 1 && stats.BoundingBox(1) + stats.BoundingBox(3) < size(bw_final, 2)) 
