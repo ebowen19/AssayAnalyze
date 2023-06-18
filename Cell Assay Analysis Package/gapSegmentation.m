@@ -11,7 +11,6 @@ function [complement, final_strel] = gapSegmentation(gap_cleared2, strel_range)
         complement1 = imcomplement(bw_dilated);    
         border_holes_filled = bwareaopen(complement1,8000);
 
-        %figure; colormap gray; imagesc(border_holes_filled)
 
         %change back to original (non-complement) image so that we can get rid of
         %cells in gap
@@ -24,8 +23,6 @@ function [complement, final_strel] = gapSegmentation(gap_cleared2, strel_range)
 
         % Final Area opening to get rid of debris in gap
         bw_final = bwareaopen(bw_eroded,5000); 
-
-        %figure; colormap gray; imagesc(bw_final)
 
         %create complement so gap can be measured as an *object*
         complement = imcomplement(bw_final);
