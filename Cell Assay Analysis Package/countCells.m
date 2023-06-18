@@ -27,8 +27,7 @@ end
         
 % Apply the blurry mask to the original image
 blurryImage = img_blurred;
-%aboveThresholdMask = img_blurred > graythresh(img_blurred);
-%blurryImage(blurryMask & aboveThresholdMask) = 0;  % Set to white
+
 
 blurryImage(~blurryMask) = 0; %create an image that displays original
 % grayscale values of blurry regions, and non-blurry regions set to 0 (black)
@@ -52,33 +51,11 @@ blurryImage(~blurryMask) = 0; %create an image that displays original
      
      figure
      colormap gray
-%      imshow(bw),  title('Binarized Image')  
 
     bw2 = imcomplement(bw);
     
 %remove small objects to denoise:
 denoised = bwareaopen(bw2, 20);
-% % %imagesc(denoised), title('Specks Removed')
-% labeledImage = bwlabel(denoised);
-% % Calculate the properties of the foreground objects
-% props = regionprops(labeledImage, denoised, 'Area');
-% 
-% % Extract the area values of foreground objects
-% foregroundAreas = [props.Area];
-% 
-% %count cells using distinct foreground objects & breaking up area of large
-% %clustered objects
-% cells = numel(foregroundAreas); %# of foreground objects
-% 
-% sum(foregroundAreas);
-% 
-% clusteredCells = foregroundAreas(foregroundAreas > 150); %extract large objects that represent multiple cells clustered tog
-% num = numel(clusteredCells); %get # of elements
-% cells = cells-num; %remove those from the cell count 
-% clusteredArea = sum(clusteredCells); %get total area of clustered cells
-% %73 = avg cell size
-% cells = round(cells + clusteredArea/73) %add clustered area ÷ avg cell size & round to make whole #
-
 
 %count cells (foreground objects) 
 se = strel('disk', 2);
@@ -96,11 +73,6 @@ C = imfuse(eroded,img1,'montage');
 S = extractBefore(imgTitle, '.');
 fileName = "MONTAGE " + S + '.jpg';
 imwrite(C,fileName)
-
-
-
-%fprintf('Image Montage (Downloaded) [Erosion]: [%s]', fileName)
-%imagesc(C)
 
 %create an excel file with tableName if such a file does not already exist;
 if ~isfile(tableName) %if the table does not already exist
@@ -121,8 +93,6 @@ newRow = {imgTitle, cells};
 
 
 data = [existingTable;newRow]; %add data from analysis
-%T = unique(data,'rows', 'stable'); %make sure there are no duplicate lines
-% Find the unique values in PhotoName column
 [~, ia, ~] = unique(flipud(data.PhotoName),'rows', 'stable');
 ia = size(data,1) - ia + 1;% Select only the rows that contain unique values. If you ran code for
 % the same image >1 time, the program will save the most recent version of
