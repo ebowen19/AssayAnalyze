@@ -1,5 +1,6 @@
 # AssayAnalyze by Elizabeth Bowen
 A Matlab tool for computationally analyzing scratch and transwell assays
+
 [note: any live scripts (.mlx) can only be opened/viewed in Matlab]
 
 ## ScratchAssay: quantify # of pixels in the gap
