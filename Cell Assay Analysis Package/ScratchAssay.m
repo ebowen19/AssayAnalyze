@@ -193,7 +193,6 @@ newRow = {imgTitle, gapArea};
 
 
 data = [existingTable;newRow]; %add data from analysis
-%T = unique(data,'rows', 'stable'); %make sure there are no duplicate lines
 % Find the unique values in PhotoName column
 [~, ia, ~] = unique(flipud(data.PhotoName),'rows', 'stable');
 ia = size(data,1) - ia + 1;% Select only the rows that contain unique values. If you ran code for
