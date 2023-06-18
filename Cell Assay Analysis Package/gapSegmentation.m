@@ -30,11 +30,6 @@ function [complement, final_strel] = gapSegmentation(gap_cleared2, strel_range)
         %create complement so gap can be measured as an *object*
         complement = imcomplement(bw_final);
 
-% Display the final binary image with the strel size used
-        % figure; colormap gray
-        %fprintf('Strel size = %d', strel_range(i))
-        %imagesc(complement);
-
         % Label the connected components in the binary image
         cc = bwconncomp(complement);        
         % Count the number of connected components
