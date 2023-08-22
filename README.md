@@ -3,12 +3,12 @@ A Matlab tool for computationally analyzing scratch and transwell assays
 
 [note: any live scripts (.mlx) can only be opened/viewed in Matlab]
 
-### Folders
-- 
 
-## ScratchAssay: quantify # of pixels in the gap
-- 
-- 
+
+## ScratchAssay.mlx: quantify # of pixels in the gap
+- Once opened in matlab, navigate to the "VIEW" tab at the top of the window and select the "Hide Code" option. Then fill in the empty fields according to the instructions to the right & hit the buttons to run each section.
+- to run the whole script, navigate back to the live editor tab & Hit the big Run play button @ the top of the screen.
+  
 ## cellCounter: count cells in a transwell assay
 - 
 - **cellCounter.mlx** is a more user-friendly version of the script (live script version) that can only be used/viewed inside of Matlab. Once opened in matlab, navigate to the "VIEW" tab at the top of the window and select the "Hide Code" option. Then fill in the empty fields according to the instructions to the right & hit the "Run" button.
