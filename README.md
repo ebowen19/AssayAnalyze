@@ -8,7 +8,7 @@ A Matlab tool for computationally analyzing scratch and transwell assays
 - to run the whole script, navigate back to the live editor tab & Hit the big Run play button @ the top of the screen.
 
 ![Scratch Assay Example](https://github.com/ebowen19/AssayAnalyze/raw/main/Examples/Scratch.jpg)
-Scratch Assay Example
+[Scratch Assay Example]
 
   
 ## cellCounter: count cells in a transwell assay
@@ -17,4 +17,4 @@ Scratch Assay Example
 - **cellCounter_InteractiveLiveScript** is less fast/efficient. It can process one image at a time & allows the user to see the intermediate image processing steps for the cell counting operation.
 
 ![Transwell Assay Example](https://github.com/ebowen19/AssayAnalyze/raw/main/Examples/Transwell.jpg)
-Transwell Assay Example
+[Transwell Assay Example]
